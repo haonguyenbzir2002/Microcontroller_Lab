@@ -1,0 +1,2 @@
+fsm_edit_traffic_light.c:10:6:modifyTime	24	static
+fsm_edit_traffic_light.c:32:6:fsm_for_customizing_traffic_light	16	static

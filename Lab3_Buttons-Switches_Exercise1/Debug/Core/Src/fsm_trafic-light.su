@@ -1,0 +1,2 @@
+fsm_trafic-light.c:12:6:initState	8	static
+fsm_trafic-light.c:45:6:fsm_for_automatic_traffic_light	8	static

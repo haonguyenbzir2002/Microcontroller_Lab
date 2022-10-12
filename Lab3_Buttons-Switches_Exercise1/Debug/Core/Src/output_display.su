@@ -1,0 +1,6 @@
+output_display.c:9:6:clearAllLeds	8	static
+output_display.c:14:6:display7SEG	16	static
+output_display.c:73:6:update7SEG	16	static
+output_display.c:110:6:updateClockBuffer	16	static
+output_display.c:117:6:blinkingLed2Hz	24	static
+output_display.c:128:6:output_display	8	static
