@@ -1,0 +1,42 @@
+!SESSION 2022-10-13 00:23:40.860 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-13 00:23:57.789
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-13 00:23:57.901
+!MESSAGE Log4j initialized with config file D:\University of Technology\Microcontroller - Microproccesor\MyLab\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-13 00:24:01.237
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:24:45.405
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise1' (19 sources, 102 headers) in 4.89 sec: 7,479 declarations; 35,680 references; 2 unresolved inclusions; 295 syntax errors; 186 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:24:49.080
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise2' (19 sources, 97 headers) in 3.65 sec: 7,433 declarations; 36,117 references; 2 unresolved inclusions; 36 syntax errors; 189 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:24:52.694
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise3' (19 sources, 97 headers) in 3.58 sec: 7,437 declarations; 36,105 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:24:56.059
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise4' (19 sources, 97 headers) in 3.33 sec: 7,438 declarations; 36,106 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:24:59.925
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise5' (19 sources, 97 headers) in 3.84 sec: 7,442 declarations; 36,125 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:25:04.377
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise7' (19 sources, 97 headers) in 4.4 sec: 7,454 declarations; 36,151 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:25:08.449
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise8' (19 sources, 97 headers) in 4.04 sec: 7,457 declarations; 36,158 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:25:12.630
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise9' (19 sources, 97 headers) in 4.15 sec: 7,466 declarations; 36,598 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.42%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-10-13 00:25:16.830
+!MESSAGE Indexed 'Lab2_TimerInterupt_Exercise10' (19 sources, 97 headers) in 4.16 sec: 7,469 declarations; 36,612 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.42%)
