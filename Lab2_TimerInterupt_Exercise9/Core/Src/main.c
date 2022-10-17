@@ -225,56 +225,65 @@ void updateClockBuffer(){
 
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
+// buffer to display "A" character
 uint8_t matrix_buffer[8] = {0xFF, 0x01, 0x00, 0xEC
 						  , 0xEC, 0x00, 0x01, 0xFF};
 void updateLEDMatrix(int index){
-	//set 8 high bits of GPIOB's output data register to according buffer (ROW7 -> ROW0)
+	//set 8 high bits of GPIOB's output data register PB8 - PB15 to according buffer (ROW7 -> ROW0)
 	GPIOB->ODR = (GPIOB->ODR & 0x00FF) | (matrix_buffer[index] << 8);
 	//turn each column on one-by-one
 	switch (index){
 		case 0:
+			//display 1st column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
 									|ENM4_Pin|ENM5_Pin|ENM6_Pin
 									|ENM7_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, GPIO_PIN_RESET);
 			break;
 		case 1:
+			//display 2nd column
 			HAL_GPIO_WritePin(GPIOA, ENM0_Pin|ENM2_Pin|ENM3_Pin
 									|ENM4_Pin|ENM5_Pin|ENM6_Pin
 									|ENM7_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, GPIO_PIN_RESET);
 			break;
 		case 2:
+			//display 3rd column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM0_Pin|ENM3_Pin
 									|ENM4_Pin|ENM5_Pin|ENM6_Pin
 									|ENM7_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, GPIO_PIN_RESET);
 			break;
 		case 3:
+			//display 4th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM0_Pin
 									|ENM4_Pin|ENM5_Pin|ENM6_Pin
 									|ENM7_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, GPIO_PIN_RESET);
 			break;
 		case 4:
+			//display 5th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
 									|ENM0_Pin|ENM5_Pin|ENM6_Pin
 									|ENM7_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, GPIO_PIN_RESET);
 			break;
 		case 5:
+			//display 6th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
 									|ENM4_Pin|ENM0_Pin|ENM6_Pin
 									|ENM7_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, GPIO_PIN_RESET);
 			break;
 		case 6:
+			//display 7th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
 									|ENM4_Pin|ENM5_Pin|ENM0_Pin
 									|ENM7_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, GPIO_PIN_RESET);
 			break;
 		case 7:
+			//display 8th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
 									|ENM4_Pin|ENM5_Pin|ENM6_Pin
 									|ENM0_Pin, GPIO_PIN_SET);

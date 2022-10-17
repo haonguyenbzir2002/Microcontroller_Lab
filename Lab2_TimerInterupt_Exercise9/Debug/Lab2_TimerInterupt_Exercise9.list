@@ -725,9 +725,9 @@ void updateClockBuffer(){
  80005bc:	20000018 	.word	0x20000018
 
 080005c0 <updateLEDMatrix>:
-
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
+// buffer to display "A" character
 uint8_t matrix_buffer[8] = {0xFF, 0x01, 0x00, 0xEC
 						  , 0xEC, 0x00, 0x01, 0xFF};
 void updateLEDMatrix(int index){
@@ -735,7 +735,7 @@ void updateLEDMatrix(int index){
  80005c2:	b082      	sub	sp, #8
  80005c4:	af00      	add	r7, sp, #0
  80005c6:	6078      	str	r0, [r7, #4]
-	//set 8 high bits of GPIOB's output data register to according buffer (ROW7 -> ROW0)
+	//set 8 high bits of GPIOB's output data register PB8 - PB15 to according buffer (ROW7 -> ROW0)
 	GPIOB->ODR = (GPIOB->ODR & 0x00FF) | (matrix_buffer[index] << 8);
  80005c8:	4b46      	ldr	r3, [pc, #280]	; (80006e4 <updateLEDMatrix+0x124>)
  80005ca:	68db      	ldr	r3, [r3, #12]
@@ -765,6 +765,7 @@ void updateLEDMatrix(int index){
 	//turn each column on one-by-one
 	switch (index){
 		case 0:
+			//display 1st column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
  800060c:	2201      	movs	r2, #1
  800060e:	f64f 4108 	movw	r1, #64520	; 0xfc08
@@ -780,6 +781,7 @@ void updateLEDMatrix(int index){
 			break;
  8000622:	e05a      	b.n	80006da <updateLEDMatrix+0x11a>
 		case 1:
+			//display 2nd column
 			HAL_GPIO_WritePin(GPIOA, ENM0_Pin|ENM2_Pin|ENM3_Pin
  8000624:	2201      	movs	r2, #1
  8000626:	f64f 4104 	movw	r1, #64516	; 0xfc04
@@ -795,6 +797,7 @@ void updateLEDMatrix(int index){
 			break;
  800063a:	e04e      	b.n	80006da <updateLEDMatrix+0x11a>
 		case 2:
+			//display 3rd column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM0_Pin|ENM3_Pin
  800063c:	2201      	movs	r2, #1
  800063e:	f64f 010c 	movw	r1, #63500	; 0xf80c
@@ -810,6 +813,7 @@ void updateLEDMatrix(int index){
 			break;
  8000654:	e041      	b.n	80006da <updateLEDMatrix+0x11a>
 		case 3:
+			//display 4th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM0_Pin
  8000656:	2201      	movs	r2, #1
  8000658:	f24f 410c 	movw	r1, #62476	; 0xf40c
@@ -825,6 +829,7 @@ void updateLEDMatrix(int index){
 			break;
  800066e:	e034      	b.n	80006da <updateLEDMatrix+0x11a>
 		case 4:
+			//display 5th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
  8000670:	2201      	movs	r2, #1
  8000672:	f64e 410c 	movw	r1, #60428	; 0xec0c
@@ -840,6 +845,7 @@ void updateLEDMatrix(int index){
 			break;
  8000688:	e027      	b.n	80006da <updateLEDMatrix+0x11a>
 		case 5:
+			//display 6th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
  800068a:	2201      	movs	r2, #1
  800068c:	f64d 410c 	movw	r1, #56332	; 0xdc0c
@@ -855,6 +861,7 @@ void updateLEDMatrix(int index){
 			break;
  80006a2:	e01a      	b.n	80006da <updateLEDMatrix+0x11a>
 		case 6:
+			//display 7th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
  80006a4:	2201      	movs	r2, #1
  80006a6:	f64b 410c 	movw	r1, #48140	; 0xbc0c
@@ -870,6 +877,7 @@ void updateLEDMatrix(int index){
 			break;
  80006bc:	e00d      	b.n	80006da <updateLEDMatrix+0x11a>
 		case 7:
+			//display 8th column
 			HAL_GPIO_WritePin(GPIOA, ENM1_Pin|ENM2_Pin|ENM3_Pin
  80006be:	2201      	movs	r2, #1
  80006c0:	f647 410c 	movw	r1, #31756	; 0x7c0c
