@@ -1,4 +1,10 @@
-2022-10-13 00:14:23,765 [INFO] Activator:177 - 
+2022-10-13 00:32:23,118 [INFO] Activator:177 - 
 
 
-2022-10-13 00:14:23,769 [INFO] Activator:178 - !SESSION log4j initialized
+2022-10-13 00:32:23,122 [INFO] Activator:178 - !SESSION log4j initialized
+2022-11-01 07:32:17,618 [INFO] Activator:177 - 
+
+
+2022-11-01 07:32:17,622 [INFO] Activator:178 - !SESSION log4j initialized
+2022-11-01 07:33:26,159 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://sw-center.st.com:443: Software caused connection abort: connect
+2022-11-01 07:33:26,164 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
