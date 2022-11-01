@@ -7,9 +7,9 @@
 #include "input_processing.h"
 
 enum ButtonState{BUTTON_RELEASED, BUTTON_PRESSED} ;
-enum ButtonState button1State = BUTTON_PRESSED;
-enum ButtonState button2State = BUTTON_PRESSED;
-enum ButtonState button3State = BUTTON_PRESSED;
+enum ButtonState button1State = BUTTON_RELEASED;
+enum ButtonState button2State = BUTTON_RELEASED;
+enum ButtonState button3State = BUTTON_RELEASED;
 
 void fsm_for_button1_processing(void){
 	switch(button1State){
@@ -39,6 +39,7 @@ void fsm_for_button1_processing(void){
 			//update clock buffer if mode is 2, 3, 4
 			if (MODE != AUTOMATIC)
 				updateClockBuffer(newTimer, MODE);
+			setTimer7seg(10);
 		}
 		break;
 	case BUTTON_PRESSED:

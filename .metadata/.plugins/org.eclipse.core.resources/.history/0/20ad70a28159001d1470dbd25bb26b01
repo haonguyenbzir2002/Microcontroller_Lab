@@ -39,6 +39,7 @@ void fsm_for_button1_processing(void){
 			//update clock buffer if mode is 2, 3, 4
 			if (MODE != AUTOMATIC)
 				updateClockBuffer(newTimer, MODE);
+			setTimer7seg(10);
 		}
 		break;
 	case BUTTON_PRESSED:

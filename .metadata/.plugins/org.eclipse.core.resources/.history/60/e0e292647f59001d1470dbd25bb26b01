@@ -7,16 +7,16 @@
 #include "input_processing.h"
 
 enum ButtonState{BUTTON_RELEASED, BUTTON_PRESSED} ;
-enum ButtonState button1State = BUTTON_PRESSED;
-enum ButtonState button2State = BUTTON_PRESSED;
-enum ButtonState button3State = BUTTON_PRESSED;
+enum ButtonState button1State = BUTTON_RELEASED;
+enum ButtonState button2State = BUTTON_RELEASED;
+enum ButtonState button3State = BUTTON_RELEASED;
 
 void fsm_for_button1_processing(void){
 	switch(button1State){
 	case BUTTON_RELEASED:
 		if(is_button_pressed(0)){
 			button1State = BUTTON_PRESSED;
-			//INCREASE MODE
+			//INCREASE MODE BY ONE UNIT
 			switch (MODE) {
 			case AUTOMATIC:
 				MODE = MANUAL_RED;
@@ -32,13 +32,19 @@ void fsm_for_button1_processing(void){
 				initState();
 				break;
 			}
+			MODE++;
+			if (MODE >= MANUAL_GREEN + 1){
+				MODE = AUTOMATIC;
+				initState();
+			}
 			//reset newTimer
 			newTimer = 1;
 			//clear all leds for next mode
 			clearAllLeds();
 			//update clock buffer if mode is 2, 3, 4
-			if (MODE != AUTOMATIC)
+			if (MODE > AUTOMATIC)
 				updateClockBuffer(newTimer, MODE);
+			setTimer7seg(10);
 		}
 		break;
 	case BUTTON_PRESSED:
