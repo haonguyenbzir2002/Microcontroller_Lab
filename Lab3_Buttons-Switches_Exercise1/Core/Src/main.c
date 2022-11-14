@@ -102,9 +102,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  fsm_for_button1_processing();
-	  fsm_for_button2_processing();
-	  fsm_for_button3_processing();
+	  fsm_for_buttons_processing();
 	  output_display();
     /* USER CODE END WHILE */
 
@@ -244,7 +242,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if (htim->Instance == TIM2){
+		timerRun();
+		button_reading();
+	}
+}
 /* USER CODE END 4 */
 
 /**

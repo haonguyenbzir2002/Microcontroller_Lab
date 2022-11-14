@@ -6,6 +6,8 @@
  */
 #include "timer.h"
 
+#define TIMER_CYCLE 10
+
 int timerClock_flag = 0;
 int timerClock_counter = 0;
 int timerHorizontalTraffic_flag = 0;
@@ -21,28 +23,28 @@ int timerBlinking2Hz_counter = 0;
 
 void setTimerBlinking2Hz(int duration){
 	timerBlinking2Hz_flag = 0;
-	timerBlinking2Hz_counter = duration /10;
+	timerBlinking2Hz_counter = duration /TIMER_CYCLE;
 }
 
 void setTimer7seg(int duration){
 	timer7seg_flag = 0;
-	timer7seg_counter = duration /10;
+	timer7seg_counter = duration /TIMER_CYCLE;
 }
 
 void setTimerClock(int duration){
 	timerClock_flag = 0;
-	timerClock_counter = duration /10;
+	timerClock_counter = duration /TIMER_CYCLE;
 }
 
 void setTimerHorizontalTraffic(int duration){
 	timerHorizontalTraffic_flag = 0;
-	timerHorizontalTraffic_counter = duration /10;
+	timerHorizontalTraffic_counter = duration /TIMER_CYCLE;
 	timerHorizontalTraffic = duration / 1000;
 }
 
 void setTimerVerticalTraffic(int duration){
 	timerVerticalTraffic_flag = 0;
-	timerVerticalTraffic_counter = duration /10;
+	timerVerticalTraffic_counter = duration /TIMER_CYCLE;
 	timerVerticalTraffic = duration / 1000;
 }
 
@@ -71,12 +73,5 @@ void timerRun(){
 		timerBlinking2Hz_counter--;
 		if (timerBlinking2Hz_counter == 0)
 			timerBlinking2Hz_flag = 1;
-	}
-}
-
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	if (htim->Instance == TIM2){
-		timerRun();
-		button_reading();
 	}
 }

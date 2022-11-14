@@ -13,8 +13,6 @@
 #include "input_reading.h"
 #include "output_display.h"
 
-void fsm_for_button1_processing(void);
-void fsm_for_button2_processing(void);
-void fsm_for_button3_processing(void);
+void fsm_for_buttons_processing(void);
 
 #endif /* INC_INPUT_PROCESSING_H_ */

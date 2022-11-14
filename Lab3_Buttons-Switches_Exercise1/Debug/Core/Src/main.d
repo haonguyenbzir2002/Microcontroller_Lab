@@ -26,8 +26,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/global.h ../Core/Inc/timer.h ../Core/Inc/main.h \
  ../Core/Inc/input_reading.h ../Core/Inc/fsm_traffic-light.h \
  ../Core/Inc/global.h ../Core/Inc/output_display.h \
- ../Core/Inc/fsm_traffic-light.h ../Core/Inc/input_processing.h \
- ../Core/Inc/output_display.h
+ ../Core/Inc/fsm_traffic-light.h ../Core/Inc/output_display.h \
+ ../Core/Inc/input_processing.h
 
 ../Core/Inc/main.h:
 
@@ -95,6 +95,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/fsm_traffic-light.h:
 
-../Core/Inc/input_processing.h:
-
 ../Core/Inc/output_display.h:
+
+../Core/Inc/input_processing.h:

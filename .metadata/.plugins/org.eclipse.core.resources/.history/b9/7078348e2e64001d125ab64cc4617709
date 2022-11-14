@@ -1,0 +1,31 @@
+/*
+ * global.h
+ *
+ *  Created on: Oct 8, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "timer.h"
+
+#define AUTO_RED 11
+#define AUTO_YELLOW 12
+#define AUTO_GREEN 13
+
+#define AUTOMATIC 0
+#define MANUAL 4
+#define MANUAL_RED 1
+#define MANUAL_YELLOW 2
+#define MANUAL_GREEN 3
+
+extern int RED_TIME;
+extern int YELLOW_TIME;
+extern int GREEN_TIME;
+extern int newTimer;
+
+extern int MODE;
+extern int MANUAL_MODE;
+
+#endif /* INC_GLOBAL_H_ */

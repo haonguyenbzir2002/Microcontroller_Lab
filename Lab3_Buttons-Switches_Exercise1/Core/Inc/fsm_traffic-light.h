@@ -12,6 +12,7 @@
 #include "timer.h"
 #include "main.h"
 #include "input_reading.h"
+#include "output_display.h"
 
 extern int horizontalTrafficState;
 extern int verticalTrafficState;

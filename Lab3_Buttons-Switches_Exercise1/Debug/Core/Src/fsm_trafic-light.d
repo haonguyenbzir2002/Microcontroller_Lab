@@ -24,7 +24,8 @@ Core/Src/fsm_trafic-light.o: ../Core/Src/fsm_trafic-light.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/input_reading.h
+ ../Core/Inc/input_reading.h ../Core/Inc/output_display.h \
+ ../Core/Inc/fsm_traffic-light.h
 
 ../Core/Inc/fsm_traffic-light.h:
 
@@ -83,3 +84,7 @@ Core/Src/fsm_trafic-light.o: ../Core/Src/fsm_trafic-light.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
 ../Core/Inc/input_reading.h:
+
+../Core/Inc/output_display.h:
+
+../Core/Inc/fsm_traffic-light.h:

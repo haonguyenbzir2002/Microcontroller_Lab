@@ -10,6 +10,7 @@ int horizontalTrafficState = AUTO_RED;
 int verticalTrafficState = AUTO_GREEN;
 
 void initState(){
+	index_led = 0;
 	setTimer7seg(20);
 	setTimerClock(10);
 	horizontalTrafficState = AUTO_RED;

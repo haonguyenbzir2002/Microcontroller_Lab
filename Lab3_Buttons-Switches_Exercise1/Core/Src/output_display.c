@@ -138,7 +138,7 @@ void output_display(){
 		break;
 	case MANUAL_RED:
 		blinkingLed2Hz(HORIZONTAL_RED_GPIO_Port, HORIZONTAL_RED_Pin,
-					   VERTICAL_RED_GPIO_Port, VERTICAL_RED_Pin);
+							   VERTICAL_RED_GPIO_Port, VERTICAL_RED_Pin);
 		break;
 	case MANUAL_YELLOW:
 		blinkingLed2Hz(HORIZONTAL_YELLOW_GPIO_Port, HORIZONTAL_YELLOW_Pin,
@@ -147,6 +147,8 @@ void output_display(){
 	case MANUAL_GREEN:
 		blinkingLed2Hz(HORIZONTAL_GREEN_GPIO_Port, HORIZONTAL_GREEN_Pin,
 					   VERTICAL_GREEN_GPIO_Port, VERTICAL_GREEN_Pin);
+		break;
+	default:
 		break;
 	}
 

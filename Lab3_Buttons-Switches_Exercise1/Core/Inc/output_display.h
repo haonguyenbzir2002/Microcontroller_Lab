@@ -12,6 +12,8 @@
 #include "main.h"
 #include "fsm_traffic-light.h"
 
+extern int index_led;
+
 void updateClockBuffer(int first, int second);
 void clearAllLeds();
 void output_display();

@@ -6,16 +6,20 @@
  */
 #include "input_processing.h"
 
-enum ButtonState{BUTTON_RELEASED, BUTTON_PRESSED} ;
-enum ButtonState button1State = BUTTON_PRESSED;
-enum ButtonState button2State = BUTTON_PRESSED;
-enum ButtonState button3State = BUTTON_PRESSED;
+enum ButtonState{BUTTONS_INIT, BUTTONS_RELEASED, BUTTON1_PRESSED, BUTTON2_PRESSED, BUTTON3_PRESSED} ;
 
-void fsm_for_button1_processing(void){
-	switch(button1State){
-	case BUTTON_RELEASED:
+enum ButtonState buttonsState = BUTTONS_INIT;
+
+void fsm_for_buttons_processing(void){
+	switch (buttonsState){
+	case BUTTONS_INIT:
+		if(!is_button_pressed(0)){
+			buttonsState = BUTTONS_RELEASED;
+		}
+		break;
+	case BUTTONS_RELEASED:
 		if(is_button_pressed(0)){
-			button1State = BUTTON_PRESSED;
+			buttonsState = BUTTON1_PRESSED;
 			//INCREASE MODE
 			switch (MODE) {
 			case AUTOMATIC:
@@ -40,20 +44,8 @@ void fsm_for_button1_processing(void){
 			if (MODE != AUTOMATIC)
 				updateClockBuffer(newTimer, MODE);
 		}
-		break;
-	case BUTTON_PRESSED:
-		if(!is_button_pressed(0)){
-			button1State = BUTTON_RELEASED;
-		}
-		break;
-	}
-}
-
-void fsm_for_button2_processing(void){
-	switch(button2State){
-	case BUTTON_RELEASED:
-		if(is_button_pressed(1)){
-			button2State = BUTTON_PRESSED;
+		else if(is_button_pressed(1)){
+			buttonsState = BUTTON2_PRESSED;
 			if (MODE != AUTOMATIC){
 				newTimer++;
 				if (newTimer >= 100)
@@ -61,20 +53,8 @@ void fsm_for_button2_processing(void){
 				updateClockBuffer(newTimer, MODE);
 			}
 		}
-		break;
-	case BUTTON_PRESSED:
-		if(!is_button_pressed(1)){
-			button2State = BUTTON_RELEASED;
-		}
-		break;
-	}
-}
-
-void fsm_for_button3_processing(void){
-	switch(button3State){
-	case BUTTON_RELEASED:
-		if(is_button_pressed(2)){
-			button3State = BUTTON_PRESSED;
+		else if(is_button_pressed(2)){
+			buttonsState = BUTTON3_PRESSED;
 			switch (MODE){
 			case MANUAL_RED:
 				RED_TIME = newTimer * 1000;
@@ -90,11 +70,22 @@ void fsm_for_button3_processing(void){
 			}
 		}
 		break;
-	case BUTTON_PRESSED:
-		if(!is_button_pressed(2)){
-			button3State = BUTTON_RELEASED;
+	case BUTTON1_PRESSED:
+		if(!is_button_pressed(0)){
+			buttonsState = BUTTONS_RELEASED;
 		}
+		break;
+	case BUTTON2_PRESSED:
+		if(!is_button_pressed(1)){
+			buttonsState = BUTTONS_RELEASED;
+		}
+		break;
+	case BUTTON3_PRESSED:
+		if(!is_button_pressed(2)){
+			buttonsState = BUTTONS_RELEASED;
+		}
+		break;
+	default:
 		break;
 	}
 }
-
