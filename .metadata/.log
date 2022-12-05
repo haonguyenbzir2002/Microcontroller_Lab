@@ -1,0 +1,21 @@
+!SESSION 2022-12-05 22:32:57.425 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-12-05 22:33:14.833
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-12-05 22:33:14.953
+!MESSAGE Log4j initialized with config file D:\University of Technology\Microcontroller - Microproccesor\MyLab\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-05 22:33:18.568
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-05 22:33:52.517
+!MESSAGE Indexed 'scheduler_example' (21 sources, 98 headers) in 4.26 sec: 7,475 declarations; 34,448 references; 7 unresolved inclusions; 295 syntax errors; 1,052 unresolved names (2.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-05 22:35:10.946
+!MESSAGE Indexed 'Lab4_CooperativeScheduler' (21 sources, 99 headers) in 3.25 sec: 7,474 declarations; 35,608 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)

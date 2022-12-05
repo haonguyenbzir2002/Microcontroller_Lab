@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;scheduler_example&apos; to &apos;Lab4_CooperativeScheduler&apos;" description="Rename resource &apos;scheduler_example&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/scheduler_example" name="Lab4_CooperativeScheduler" stamp="1670254507380" updateReferences="true"/>
+</session>
