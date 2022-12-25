@@ -1,0 +1,49 @@
+/*
+ * command_parser_fsm.c
+ *
+ *  Created on: Dec 24, 2022
+ *      Author: Admin
+ */
+#include "command_parser_fsm.h"
+
+int index;
+
+void command_parser_fsm()
+{
+	switch (command_parser_status){
+	case INPUT_INIT:
+		if (buffer[index] == (uint8_t)('!'))
+			command_parser_status = INPUT_STATUS_1;
+		break;
+	case INPUT_STATUS_1:
+		if (buffer[index] == (uint8_t)('R'))
+			command_parser_status = INPUT_STATUS_2;
+		else if (buffer[index] == (uint8_t)('O'))
+			command_parser_status = INPUT_STATUS_5;
+		break;
+	case INPUT_STATUS_2:
+		if (buffer[index] == (uint8_t)('S'))
+			command_parser_status = INPUT_STATUS_3;
+		break;
+	case INPUT_STATUS_3:
+		if (buffer[index] == (uint8_t)('T'))
+			command_parser_status = INPUT_STATUS_4;
+		break;
+	case INPUT_STATUS_4:
+		if (buffer[index] == (uint8_t)('#')){
+			request = 1;
+			command_parser_status = INPUT_INIT;
+		}
+		break;
+	case INPUT_STATUS_5:
+		if (buffer[index] == (uint8_t)('K'))
+			command_parser_status = INPUT_STATUS_6;
+		break;
+	case INPUT_STATUS_6:
+		if (buffer[index] == (uint8_t)('#')){
+			command_parser_status = INPUT_INIT;
+		}
+		break;
+	}
+}
+

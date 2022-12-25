@@ -1,0 +1,16 @@
+/*
+ * global.c
+ *
+ *  Created on: Dec 24, 2022
+ *      Author: Admin
+ */
+
+#include "global.h"
+
+#define MAX_BUFFER_SIZE 30
+
+int uart_communication_status;
+int command_parser_status;
+
+int request;
+int ok;

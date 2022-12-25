@@ -1,0 +1,26 @@
+/*
+ * global.h
+ *
+ *  Created on: Dec 24, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+extern int uart_communication_status;
+extern int command_parser_status;
+extern int request;
+extern int ok;
+
+#define INPUT_INIT 11
+#define INPUT_STATUS_1 12
+#define INPUT_STATUS_2 13
+#define INPUT_STATUS_3 14
+#define INPUT_STATUS_4 15
+#define INPUT_STATUS_5 16
+#define INPUT_STATUS_6 17
+#define INPUT_STATUS_7 18
+#define INPUT_STATUS_END 19
+
+#endif /* INC_GLOBAL_H_ */

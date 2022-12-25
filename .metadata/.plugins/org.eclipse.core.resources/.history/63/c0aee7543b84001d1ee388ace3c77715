@@ -1,0 +1,18 @@
+/*
+ * global.c
+ *
+ *  Created on: Dec 24, 2022
+ *      Author: Admin
+ */
+
+#include "global.h"
+
+int uart_communication_status;
+int command_parser_status;
+
+int request;
+int ok;
+
+int index = 0;
+
+uint8_t buffer [ MAX_BUFFER_SIZE ];
